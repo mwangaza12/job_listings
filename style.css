@@ -9,7 +9,6 @@ body {
     font-family: 'League Spartan', sans-serif;
     background: hsl(180, 52%, 96%);
     color: hsl(180, 8%, 52%);
-    padding: 2rem;
     font-size: 15px;
 }
 
@@ -101,6 +100,7 @@ body {
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 3rem;
+    padding: 0 2rem;
 }
 
 .job-card {
@@ -194,10 +194,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 1.5rem 1rem;
-    }
-
     .header {
         background: url('./images/bg-header-mobile.svg') no-repeat center;
         background-size: cover;
