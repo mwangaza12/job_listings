@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: hsl(180, 52%, 96%);
+    color: hsl(180, 8%, 52%);
+    padding: 2rem;
+    font-size: 15px;
+}
+
+.header {
+    background: url('./images/bg-header-desktop.svg') no-repeat center;
+    background-size: cover;
+    height: 150px;
+    background-color: hsl(180, 29%, 50%);
+    margin-bottom: 3rem;
+}
+
+.filter-bar {
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.filter-bar.hidden {
+    display: none;
+}
+
+#filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+#filter-tags .tag {
+    display: inline-flex;
+    align-items: center;
+    background: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-right: 2.5rem;
+    position: relative;
+}
+
+#filter-tags .tag .remove-icon {
+    background-color: hsl(180, 29%, 50%);
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+}
+
+#filter-tags .tag .remove-icon img {
+    width: 12px;
+    height: 12px;
+    display: block;
+    margin: auto;
+}
+
+#filter-tags .tag .remove-icon:hover {
+    background-color: hsl(180, 14%, 20%);
+}
+
+#clear-btn {
+    background: none;
+    border: none;
+    color: hsl(180, 29%, 50%);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0.5rem;
+    white-space: nowrap;
+}
+
+.job-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.job-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid transparent;
+    position: relative;
+}
+
+.job-card.featured {
+    border-left-color: hsl(180, 29%, 50%);
+}
+
+.job-card img {
+    width: 88px;
+    height: 88px;
+    margin-right: 1.5rem;
+}
+
+.job-card .left {
+    display: flex;
+    align-items: center;
+}
+
+.job-card .left .extras {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card .left .extras p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    color: hsl(180, 14%, 20%);
+}
+
+.job-card .left .extras strong {
+    color: hsl(180, 14%, 20%);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.job-card .left .extras .meta {
+    color: hsl(180, 8%, 52%);
+    font-size: 0.9rem;
+}
+
+.job-card .left .extras .new,
+.job-card .left .extras .featured {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+}
+
+.job-card .left .extras .new {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+}
+
+.job-card .left .extras .featured {
+    background-color: hsl(180, 14%, 20%);
+    color: white;
+}
+
+.job-card .job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.job-card .tag {
+    background: hsl(180, 31%, 95%);
+    color: hsl(180, 29%, 50%);
+    font-weight: bold;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.job-card .tag:hover {
+    background: hsl(180, 29%, 50%);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+
+    .header {
+        background: url('./images/bg-header-mobile.svg') no-repeat center;
+        background-size: cover;
+        height: 120px;
+        margin-bottom: 4rem;
+        background-color: hsl(180, 29%, 50%);
+    }
+
+    .filter-bar {
+        padding: 0.75rem;
+        margin-top: -3rem;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        border-radius: 5px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #filter-tags {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    #clear-btn {
+        margin-left: auto;
+    }
+
+    .job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 1rem 1rem 1rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+        padding-top: 3.5rem;
+    }
+
+    .job-card.featured {
+        border-left: none;
+        border-top: 5px solid hsl(180, 29%, 50%);
+    }
+
+    .job-card img {
+        position: absolute;
+        top: -24px;
+        left: 1rem;
+        width: 48px;
+        height: 48px;
+        margin-right: 0;
+    }
+
+    .job-card .left {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .job-card .left .extras {
+        width: 100%;
+    }
+
+    .job-card .left .extras p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .job-card .left .extras strong {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .job-card .left .extras .meta {
+        color: hsl(180, 8%, 52%);
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid hsl(180, 31%, 95%);
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+
+    .job-card .left .extras .new,
+    .job-card .left .extras .featured {
+        margin-left: 0.75rem;
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .job-card .job-tags {
+        justify-content: flex-start;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    #filter-tags .tag {
+        padding-right: 2.5rem;
+    }
+
+    #filter-tags .tag .remove-icon {
+        width: 24px;
+    }
+
+    #filter-tags .tag .remove-icon img {
+        width: 10px;
+        height: 10px;
+    }
+}
